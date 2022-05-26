@@ -20,9 +20,11 @@ This discord bot uses Govee's public http api to control a wifi-enabled Govee rg
 
 ## The main.py file uses information from a file called 'personaldata.py'
 This file should contain the follow constants:
+- DISCORDBOTTOKEN = 'your_discord_bot_token'
 - API_KEY = 'your_govee_api_key'
 - DEVICEMAC = 'your_govee_device_macaddress'
-- DEVICEMODEL = 'your_devicemodel' e.g 'H619E'
+- DEVICEMODEL = 'your_devicemodel' 
+> e.g 'H619E'
 - BANNEDUSERS = [12345678987654321]
 > By default everyone can use the bot, only the users in this list with userids (separated by commas) are not permitted to use the bot.
 
