@@ -14,7 +14,7 @@ This discord bot uses Govee's public http api to control a wifi-enabled Govee rg
     - 🟡yellow: 255,255,0
     - 🟢Green: 0,255,0
     - 🔵Cyan: 173,216,230
-    - 🔘Blue: 0,0,255
+    - 🧿Blue: 0,0,255
     - 🟣Purple: 128,0,128
     - 🌸Pink: 255,20,147
 
