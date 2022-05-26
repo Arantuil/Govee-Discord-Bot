@@ -28,5 +28,5 @@ This file should contain the follow constants:
 - BANNEDUSERS = [12345678987654321]
 > By default everyone can use the bot, only the users in this list with userids (separated by commas) are not permitted to use the bot.
 
-To-do list:
+## To-do list:
 - Rate limit on the bot side (not on the side of the discord channel, which server owners could bypass).
