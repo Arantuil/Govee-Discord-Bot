@@ -1,4 +1,4 @@
-![image](https://user-images.githubusercontent.com/67122764/170590691-a85a5401-c76d-4660-acf8-530fd3d0a811.png)
+![fewfweg](https://user-images.githubusercontent.com/67122764/170590841-ed7a957e-9651-4227-b1e8-c0014e6f770d.png)
 # Govee-Discord-Bot-Ledstrip
 ## A discord bot to control your Govee wifi-enabled rgb ledstrip
 This discord bot uses Govee's public http api to control a wifi-enabled Govee rgb ledstrip
