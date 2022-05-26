@@ -1,14 +1,14 @@
 ![fewfweg](https://user-images.githubusercontent.com/67122764/170590841-ed7a957e-9651-4227-b1e8-c0014e6f770d.png)
-# Govee-Discord-Bot-Ledstrip
-## This Discord bot lets you control your wifi-enabled Govee RGB ledstrip
-This discord bot uses Govee's public http api to control a wifi-enabled Govee rgb ledstrip
+# Govee-Discord-Bot
+## This Discord bot lets you control your wifi-enabled Govee RGB device
+This discord bot uses Govee's public http api to control a wifi-enabled Govee rgb device
 
 ## A list of all the current available bot commands:
-- $on - To turn the ledstrip on
-- $off - To turn the ledstrip off
-- $state - To get the current state of the ledstrip (on/orr)
-- $brightness N - Change the brightness of the ledstrip to N procent brightness
-- $color R,G,B - To change the color of the ledstrip input requires 3 numbers (max. 255) separated by a comma (R= Red, G= Green, B= Blue), a list of a few example colors:
+- $on - To turn the device on
+- $off - To turn the device off
+- $state - To get the current state of the device (on/orr)
+- $brightness N - Change the brightness of the device to N procent brightness
+- $color R,G,B - To change the color of the device input requires 3 numbers (max. 255) separated by a comma (R= Red, G= Green, B= Blue), a list of a few example colors:
     - 🔴Red: 255,0,0
     - 🟠Orange: 255,165,0
     - 🟡yellow: 255,255,0
