@@ -13,7 +13,13 @@ client.state = ''
 @client.event
 async def on_ready():
     print('Logged in as {0.user}'.format(client))
-    await client.change_presence(status=discord.Status.online, activity=discord.Game(f'❔ Ledstrip is now ?'))
+    devicestateurl = f'https://developer-api.govee.com/v1/devices/state?device={DEVICEMAC[0:2]}%3A{DEVICEMAC[3:5]}%3A{DEVICEMAC[6:8]}%3A{DEVICEMAC[9:11]}%3A{DEVICEMAC[12:14]}%3A{DEVICEMAC[15:17]}%3A{DEVICEMAC[18:20]}%3A{DEVICEMAC[21:23]}&model={DEVICEMODEL}'
+    devicestate = requests.get(devicestateurl, headers=headers)
+    onoroff = (devicestate.json()['data']['properties'][1]['powerState'])
+    if onoroff == 'on':
+        await client.change_presence(status=discord.Status.online, activity=discord.Game(f'🟢 Ledstrip is now turned ON'))
+    else:
+        await client.change_presence(status=discord.Status.online, activity=discord.Game(f'🔴 Ledstrip is now turned OFF'))
 
 @client.event
 async def on_message(message):
