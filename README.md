@@ -19,7 +19,7 @@ This discord bot uses Govee's public http api to control a wifi-enabled Govee rg
     - 🌸Pink: 255,20,147
 
 ## The main.py file uses information from a file called 'personaldata.py'
-This file should contain the follow constants:
+This file should contain the following constants:
 - DISCORDBOTTOKEN = 'your_discord_bot_token'
 - API_KEY = 'your_govee_api_key'
 - DEVICEMAC = 'your_govee_device_macaddress'
