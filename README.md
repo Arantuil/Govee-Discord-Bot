@@ -17,6 +17,7 @@ This discord bot uses Govee's public http api to control a wifi-enabled Govee rg
     - 🧿Blue: 0,0,255
     - 🟣Purple: 128,0,128
     - 🌸Pink: 255,20,147
+- $random - Change the color of the ledstrip to a random color
 
 ## The main.py file uses information from a file called 'personaldata.py'
 This file should contain the follow constants:

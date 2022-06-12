@@ -1,5 +1,6 @@
 import discord
 from discord.ext import commands
+import random
 
 from personaldata import *
 
@@ -43,6 +44,7 @@ async def on_message(message):
     - 🧿Blue: 0,0,255
     - 🟣Purple: 128,0,128
     - 🌸Pink: 255,20,147
+- $random - Change the color of the ledstrip to a random color
 ''')
     
     if message.content.startswith('$off'):
@@ -124,6 +126,25 @@ async def on_message(message):
                 colorlevelcmd = {"device": DEVICEMAC,"model": DEVICEMODEL ,"cmd": {"name": "color","value": {'r': int(x[0]),'g': int(x[1]),'b': int(x[2])}}}
                 putrequest = requests.put(apicontrolurl, json=colorlevelcmd, headers=headers)
                 await message.channel.send('The color of the ledstrip has now changed 🔴🟠🟡🟢🔵🟣')
+            else:
+                await message.channel.send('The ledstrip is currently turned off, use $on')
+    
+        else:
+            await message.channel.send('You are not permitted to control the ledstrip')
+        
+    
+    if message.content.startswith('$random'):
+        if message.author.id not in BANNEDUSERS:
+            devicestateurl = f'https://developer-api.govee.com/v1/devices/state?device={DEVICEMAC[0:2]}%3A{DEVICEMAC[3:5]}%3A{DEVICEMAC[6:8]}%3A{DEVICEMAC[9:11]}%3A{DEVICEMAC[12:14]}%3A{DEVICEMAC[15:17]}%3A{DEVICEMAC[18:20]}%3A{DEVICEMAC[21:23]}&model={DEVICEMODEL}'
+            devicestate = requests.get(devicestateurl, headers=headers)
+            onoroff = (devicestate.json()['data']['properties'][1]['powerState'])
+            if onoroff == 'on':
+                randomred = random.randint(0,255)
+                randomgreen = random.randint(0,255)
+                randomblue = random.randint(0,255)
+                colorlevelcmd = {"device": DEVICEMAC,"model": DEVICEMODEL ,"cmd": {"name": "color","value": {'r': randomred,'g': randomgreen,'b': randomblue}}}
+                putrequest = requests.put(apicontrolurl, json=colorlevelcmd, headers=headers)
+                await message.channel.send('The color of the ledstrip has now changed to a random color 🔴🟠🟡🟢🔵🟣')
             else:
                 await message.channel.send('The ledstrip is currently turned off, use $on')
     
